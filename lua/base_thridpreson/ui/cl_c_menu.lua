@@ -1,4 +1,4 @@
-UI.CameraPosition = UI.CameraPosition or {x = 0.4, y = 0.4}
+UI.CameraPosition = UI.CameraPosition or {x = 1.00, y = 0.5}
 
 function CreateCameraSettings()
 
@@ -8,7 +8,7 @@ function CreateCameraSettings()
 
     UI.CameraMenu = vgui.Create("DFrame")
     local frame = UI.CameraMenu
-    frame:SetSize( 400, 480 )
+    frame:SetSize( 450, 520 )
     frame:SetTitle("")
     frame:SetDraggable(false)
     frame:ShowCloseButton(false)
@@ -74,10 +74,10 @@ function CreateCameraSettings()
         surface.SetDrawColor(UI.colors.lightTrigg)
         surface.DrawLine(w/2, h/2, self.PlayerPos.x, self.PlayerPos.y)
 
-        draw.SimpleText("Вперед", "DermaDefault", w/2 + 10, 10, UI.colors.normalDark)
-        draw.SimpleText("Назад", "DermaDefault", w/2 + 10, h - 20, UI.colors.normalDark)
-        draw.SimpleText("Влево", "DermaDefault", 10, h/2 - 20, UI.colors.normalDark)
-        draw.SimpleText("Вправо", "DermaDefault", w - 40, h/2 - 20, UI.colors.normalDark)
+        draw.SimpleText(THRIDPRESON.Translate("cordenate_plane.forward"), "DermaDefault", w/2 + 10, 10, UI.colors.normalDark)
+        draw.SimpleText(THRIDPRESON.Translate("cordenate_plane.back"), "DermaDefault", w/2 + 10, h - 20, UI.colors.normalDark)
+        draw.SimpleText(THRIDPRESON.Translate("cordenate_plane.left"), "DermaDefault", 10, h/2 - 20, UI.colors.normalDark)
+        draw.SimpleText(THRIDPRESON.Translate("cordenate_plane.right"), "DermaDefault", w - 40, h/2 - 20, UI.colors.normalDark)
     end
 
     function viewPanel:OnSizeChanged(w, h)
@@ -136,7 +136,7 @@ function CreateCameraSettings()
         local lbl = vgui.Create("DLabel", sliderPanel)
         lbl:SetText(sliderLabel)
         lbl:SetTextColor(UI.colors.normalDark)
-        lbl:SetWide(180)
+        lbl:SetWide(250)
         lbl:Dock(LEFT)
         
         local slider = vgui.Create("DNumSlider", sliderPanel)
@@ -165,23 +165,41 @@ function CreateCameraSettings()
         return slider
     end
 
-    CreateSlider(controlPanel, "Смещение камеры по карденате Y", "idl_thirdperson_x", 0, 1)
-    CreateSlider(controlPanel, "Смещение камеры по карденате X", "idl_thirdperson_y", 0, 1)
-    CreateSlider(controlPanel, "Смещение камеры по карденате Z", "idl_thirdperson_z", 0, 1)
+    CreateSlider(controlPanel, THRIDPRESON.Translate("bottom_panel.slider_1"), "idl_thirdperson_x", 0, 1)
+    CreateSlider(controlPanel, THRIDPRESON.Translate("bottom_panel.slider_2"), "idl_thirdperson_y", 0, 1)
+    CreateSlider(controlPanel, THRIDPRESON.Translate("bottom_panel.slider_3"), "idl_thirdperson_z", 0, 1)
 
+    -- Кнопка сброса (над кнопкой языка)
     local resetBtn = vgui.Create("DButton", controlPanel)
     resetBtn:Dock(BOTTOM)
-    resetBtn:SetText("Сбросить настройки")
-    resetBtn:DockMargin(0, 10, 0, 0)
+    resetBtn:SetText(THRIDPRESON.Translate("bottom_panel.button_1"))
+    resetBtn:DockMargin(0, 5, 0, 0)
     resetBtn.DoClick = function()
-        RunConsoleCommand("idl_thirdperson_x", "0.4")
-        RunConsoleCommand("idl_thirdperson_y", "0.4")
-        RunConsoleCommand("idl_thirdperson_z", "0.3")
+        RunConsoleCommand("idl_thirdperson_x", "1.00")
+        RunConsoleCommand("idl_thirdperson_y", "0.50")
+        RunConsoleCommand("idl_thirdperson_z", "0.50")
         
         UI.CameraPosition = {x = 0.4, y = 0.4}
         if IsValid(viewPanel) then
             UpdatePoint()
         end
+    end
+
+    local langBtn = vgui.Create("DButton", controlPanel)
+    langBtn:Dock(BOTTOM)
+    langBtn:DockMargin(0, 5, 0, 0)
+    langBtn:SetText(THRIDPRESON.Translate("bottom_panel.button_2", "Выбрать язык"))
+    langBtn.DoClick = function()
+        local menu = DermaMenu()
+        for lang_name, id_key in pairs(UI.language_names) do
+            local display = THRIDPRESON.Translate("bottom_panel.list_" .. id_key, lang_name)
+            menu:AddOption(display, function()
+                if THRIDPRESON.Languages[lang_name] then
+                    RunConsoleCommand("thridpreson_language", lang_name)
+                end
+            end)
+        end
+        menu:Open()
     end
     
     function frame:OnClose()

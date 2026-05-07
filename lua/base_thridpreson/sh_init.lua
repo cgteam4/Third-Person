@@ -64,4 +64,5 @@ local function include_dir( dir )
 end
 
 include_dir("modules", true)
-include_dir("ui", false)
+include_dir("language", true)
+include_dir("ui", true)

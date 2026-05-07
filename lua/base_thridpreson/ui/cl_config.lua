@@ -43,6 +43,16 @@ UI.themes = UI.themes or
 	},
 }
 
+UI.language_names = UI.language_names or {
+    english = "1",
+    german  = "2",
+    french  = "3",
+    polish  = "4",
+    chinese = "5",
+    russian = "6",
+    ukrainian = "7"
+}
+
 local id = GetConVar("idl_uitheme"):GetInt()
 
 UI.defaulttheme = 1
