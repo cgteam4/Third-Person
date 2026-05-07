@@ -37,4 +37,4 @@ The addon supports the following list of languages:
 
 ![загружено](https://github.com/user-attachments/assets/015a87a7-0085-4a44-883c-5d0e9828a4a3)
 
-![загружено (1)](https://github.com/user-attachments/assets/b0a54cd9-4b42-4bfa-b055-9c9fb07fa498)
+<img width="387" height="481" alt="Снимок экрана 2026-05-07 180811" src="https://github.com/user-attachments/assets/00523bc0-f219-4dd7-b90e-2cf1732a4520" />
