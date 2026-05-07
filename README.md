@@ -18,11 +18,6 @@
 7# Украинский язык;
 
 
-
-
-
-
-
 How to use the addon?
 
 The main camera settings are accessed via the [b]ContextMenu, opened with the «C» key.
