@@ -1,12 +1,14 @@
 Третей лицо для Garry's Mod.
 
-[h1] Как пользоваться аддоном? [/h1]
-Основная настройка камеры происходит через [b]ContextMenu[/b], вызываемое клавишей [b]«C»[/b].
-При нажатии на клавишу [b]«F2»[/b] происходит переключение вида камеры.
-При зажатии клавиши [b]«V»[/b] вы можете вращать камерой вокруг персонажа.
+Как пользоваться аддоном?
 
-[h1] Какие языки поддерживает аддон? [/h1]
-[h3] Аддон поддерживает следующий список языков: [/h3]
+Основная настройка камеры происходит через ContextMenu, вызываемое клавишей «C».
+При нажатии на клавишу «F2» происходит переключение вида камеры.
+При зажатии клавиши «V» вы можете вращать камерой вокруг персонажа.
+
+Какие языки поддерживает аддон?
+
+Аддон поддерживает следующий список языков:
 1# Английский язык;
 2# Немецкий язык;
 3# Французский язык;
@@ -17,13 +19,15 @@
 
 
 
-[h1] How to use the addon? [/h1]
-The main camera settings are accessed via the [b]ContextMenu[/b], opened with the [b]«C»[/b] key.
-Press the [b]«F2»[/b] key to switch the camera view.
-While holding the [b]«V»[/b] key, you can rotate the camera around your character.
+How to use the addon?
 
-[h1] What languages does the addon support? [/h1]
-[h3] The addon supports the following list of languages: [/h3]
+The main camera settings are accessed via the [b]ContextMenu, opened with the «C» key.
+Press the «F2» key to switch the camera view.
+While holding the «V» key, you can rotate the camera around your character.
+
+What languages does the addon support?
+
+The addon supports the following list of languages:
 1# English;
 2# German;
 3# French;
