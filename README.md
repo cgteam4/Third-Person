@@ -35,6 +35,6 @@ The addon supports the following list of languages:
 6# Russian;
 7# Ukrainian;
 
-![загружено](https://github.com/user-attachments/assets/015a87a7-0085-4a44-883c-5d0e9828a4a3)
+<img width="1917" height="1049" alt="Снимок экрана 2026-05-07 181047" src="https://github.com/user-attachments/assets/27bb4222-ef0a-4923-970a-f33f4b565eb0" />
 
 <img width="387" height="481" alt="Снимок экрана 2026-05-07 180811" src="https://github.com/user-attachments/assets/00523bc0-f219-4dd7-b90e-2cf1732a4520" />
